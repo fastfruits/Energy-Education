@@ -55,4 +55,6 @@ def send_led1_status(color):
         ser.write(b"LED1_RED\n")
     elif color == "green":
         ser.write(b"LED1_GREEN\n")
+    elif color == "off":
+        ser.write(b"LED1_OFF\n")
 

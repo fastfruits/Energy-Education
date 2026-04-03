@@ -81,6 +81,7 @@ def next_question():
 def reset_game():
     game_state["current_question"] = 0
     game_state["scores"] = {}
+    serial_handler.send_led1_status("off")
     #set leds off
     return jsonify({"status": "reset"})
 
