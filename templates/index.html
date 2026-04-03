@@ -4,8 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Energy Education</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+    <link rel="icon" href="{{ url_for('static', filename='images/bulb.png') }}">
 </head>
 <body>
-    <h1>Welcome to Energy Education!</h1>
+    <div id="intro" class="card" style="display: block;">
+        <h1>Welcome to Energy Education!</h1>
+        <button class="btn-primary" onclick="startGame()">Start</button>
+    </div>
+
+    <div id="quiz" class="card" style="display: none;">
+        <div id="progress" class="progress-text"></div>
+        <div id="question-text" class="question-text"></div>
+
+        <div id="options" class="options-grid">
+            <button id="btn-a" class="option-btn" onclick="submitAnswer('a')">
+                <span class="option-label">A</span>
+                <span id="text-a" class="option-text"></span>
+            </button>
+            <button id="btn-b" class="option-btn" onclick="submitAnswer('b')">
+                <span class="option-label">B</span>
+                <span id="text-b" class="option-text"></span>
+            </button>
+        </div>
+
+        <div id="feedback" class="feedback"></div>
+        <div id="explanation" class="explanation"></div>
+
+        <button id="next-btn" class="btn-next" style="display: none;" onclick="nextQuestion()">Next Question ></button>
+    </div>
+
+    <div id="result" class="card" style="display: none;">
+        <h2>Finished!</h2>
+        <p id="final-score" class="final-score"></p>
+        <button class="btn-primary" onclick="resetGame()">Play Again</button>
+    </div>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 </html>

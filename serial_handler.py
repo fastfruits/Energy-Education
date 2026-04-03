@@ -28,12 +28,15 @@ def listen():
             line = ser.readline().decode('utf-8').strip()
 
             if line == "BUTTON1_PRESSED":
+                print("BUTTON1 PRESSED")
                 button1_pressed = True
 
             elif line == "BUTTON2_PRESSED":
+                print("BUTTON2 PRESSED")
                 button2_pressed = True
 
             elif line == "BUTTON3_PRESSED":
+                print("BUTTON3 PRESSED")
                 button3_pressed = True
 
         except Exception as e:
